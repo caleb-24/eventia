@@ -1,6 +1,6 @@
 import Feather from '@expo/vector-icons/Feather';
 import { useState, type Ref } from 'react';
-import { Platform, Pressable, StyleSheet, TextInput, View, type TextInputProps } from 'react-native';
+import { Platform, Pressable, StyleSheet, TextInput, View, type TextInputInstance, type TextInputProps } from 'react-native';
 
 import { colors, fonts, radius, space } from '@/constants/theme';
 
@@ -14,7 +14,7 @@ type Props = TextInputProps & {
   leftIcon?: keyof typeof Feather.glyphMap;
   /** Campo de contraseña con botón mostrar/ocultar. */
   password?: boolean;
-  ref?: Ref<TextInput>;
+  ref?: Ref<TextInputInstance>;
 };
 
 export function Input({

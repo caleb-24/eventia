@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { Pressable, StyleSheet, TextInput, View } from 'react-native';
+import { Pressable, StyleSheet, TextInput, View, type TextInputInstance } from 'react-native';
 
 import { colors, fonts, radius, space } from '@/constants/theme';
 
@@ -20,7 +20,7 @@ type Props = {
  * así funcionan pegar, el autocompletado del teclado y borrar.
  */
 export function CodeInput({ value, onChange, length, onComplete, error = false, autoFocus = false }: Props) {
-  const inputRef = useRef<TextInput>(null);
+  const inputRef = useRef<TextInputInstance>(null);
   const [focused, setFocused] = useState(autoFocus);
 
   const handleChange = (text: string) => {

@@ -1,6 +1,6 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { useRef, useState } from 'react';
-import { StyleSheet, View, type TextInput } from 'react-native';
+import { StyleSheet, View, type TextInputInstance } from 'react-native';
 
 import { AppText, Button, Input, Notice, Screen, TextLink, Wordmark } from '@/components/ui';
 import { colors, space } from '@/constants/theme';
@@ -21,7 +21,7 @@ export default function LoginScreen() {
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [formError, setFormError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const passwordRef = useRef<TextInput>(null);
+  const passwordRef = useRef<TextInputInstance>(null);
 
   const validate = (): boolean => {
     const next: FieldErrors = {};

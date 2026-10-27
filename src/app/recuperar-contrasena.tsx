@@ -1,7 +1,7 @@
 import * as Linking from 'expo-linking';
 import { router } from 'expo-router';
 import { useEffect, useRef, useState } from 'react';
-import { ActivityIndicator, StyleSheet, View, type TextInput } from 'react-native';
+import { ActivityIndicator, StyleSheet, View, type TextInputInstance } from 'react-native';
 
 import {
   AppText,
@@ -38,7 +38,7 @@ export default function ResetPasswordScreen() {
   const [submitted, setSubmitted] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
-  const confirmRef = useRef<TextInput>(null);
+  const confirmRef = useRef<TextInputInstance>(null);
   const handled = useRef<string | null>(null);
 
   useEffect(() => {

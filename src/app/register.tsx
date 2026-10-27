@@ -1,6 +1,6 @@
 import { router } from 'expo-router';
 import { useRef, useState } from 'react';
-import { StyleSheet, View, type TextInput } from 'react-native';
+import { StyleSheet, View, type TextInputInstance } from 'react-native';
 
 import {
   AppText,
@@ -30,9 +30,9 @@ export default function RegisterScreen() {
   const [formError, setFormError] = useState<string | null>(null);
   const [emailTaken, setEmailTaken] = useState(false);
   const [loading, setLoading] = useState(false);
-  const emailRef = useRef<TextInput>(null);
-  const phoneRef = useRef<TextInput>(null);
-  const passwordRef = useRef<TextInput>(null);
+  const emailRef = useRef<TextInputInstance>(null);
+  const phoneRef = useRef<TextInputInstance>(null);
+  const passwordRef = useRef<TextInputInstance>(null);
 
   const clearError = (field: Field) => {
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));

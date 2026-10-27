@@ -1,6 +1,6 @@
 import { router } from 'expo-router';
 import { useRef, useState } from 'react';
-import { StyleSheet, View, type TextInput } from 'react-native';
+import { StyleSheet, View, type TextInputInstance } from 'react-native';
 
 import { AppText, Button, IconBadge, Input, Notice, Screen } from '@/components/ui';
 import { colors, space } from '@/constants/theme';
@@ -18,9 +18,9 @@ export default function BusinessProfileScreen() {
   const [errors, setErrors] = useState<Partial<Record<Field, string>>>({});
   const [formError, setFormError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
-  const cityRef = useRef<TextInput>(null);
-  const phoneRef = useRef<TextInput>(null);
-  const descriptionRef = useRef<TextInput>(null);
+  const cityRef = useRef<TextInputInstance>(null);
+  const phoneRef = useRef<TextInputInstance>(null);
+  const descriptionRef = useRef<TextInputInstance>(null);
 
   const clearError = (field: Field) => {
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
